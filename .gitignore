@@ -35,3 +35,15 @@ env/
 # OS
 .DS_Store
 Thumbs.db
+
+# Project specific
+Note/
+examples/*/examples/
+*.html
+*.pdf
+
+# Project specific
+Note/
+examples/*/examples/
+*.html
+*.pdf
