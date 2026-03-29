@@ -20,7 +20,7 @@
 
 ### 依赖更新
 - 在 `setup.py` 中将 weasyprint 设为必需依赖
-- PDF 功能需要安装 `weasyprint>=60.0`
+- PDF 功能需要安装 `weasyprint>=68.1`
 - 安装 markconv 时自动安装 weasyprint
 
 ### 代码优化
