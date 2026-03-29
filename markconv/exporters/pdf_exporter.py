@@ -221,4 +221,4 @@ class PDFExporter:
             os.makedirs(output_dir, exist_ok=True)
         
         import pdfkit
-        pdfkit.from_string(html_content, output_path, encoding='UTF-8')
+        pdfkit.from_string(html_content, output_path)
