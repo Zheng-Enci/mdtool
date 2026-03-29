@@ -170,3 +170,9 @@ python pdf_example.py
   - fonts/ 目录（已删除）
   - find_fonts.py（临时脚本）
 - .gitignore 已包含 fonts/ 和临时文件忽略规则
+
+### 2026-03-29 (第十八次更新)
+- 更新 README.md 添加详细的安装说明
+- 说明 wkhtmltopdf 的下载和安装步骤
+- 提供官方下载页面和直接下载链接
+- 说明安装到默认路径 `C:\Program Files\wkhtmltopdf\`
