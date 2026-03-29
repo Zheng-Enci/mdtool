@@ -114,3 +114,9 @@ python pdf_example.py
 ### 2026-03-29 (第九次更新)
 - 添加字体注册调试信息，打印成功/失败状态
 - 帮助诊断字体加载问题
+
+### 2026-03-29 (第十次更新)
+- 发现字体注册成功但 xhtml2pdf 仍未使用注册的字体
+- 修改 `xhtml2pdf.default.DEFAULT_FONT` 字典
+- 设置 helvetica、sans-serif、serif、monospace 默认字体为 SimHei
+- 强制 xhtml2pdf 使用注册的中文字体
