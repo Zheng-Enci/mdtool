@@ -92,3 +92,10 @@ python pdf_example.py
 - 修改 `_link_callback()` 函数支持 `fonts/` 相对路径
 - 在 HTML CSS 中重新添加 `@font-face` 规则，使用相对路径引用字体文件
 - 字体文件包括：msyh.ttc、msyhbd.ttc、simhei.ttf、simsun.ttc
+
+### 2026-03-29 (第六次更新)
+- 发现 `.ttc` 文件（TrueType Collection）在 xhtml2pdf 中无法正常加载
+- 改用 `.ttf` 字体文件替代 `.ttc` 文件
+- 复制的中文字体文件：simhei.ttf、simkai.ttf、simfang.ttf、simsunb.ttf
+- 更新 `_register_chinese_fonts()` 函数使用 `.ttf` 文件
+- 更新 HTML CSS 中的 `@font-face` 规则使用 `.ttf` 文件

@@ -19,21 +19,22 @@ def _register_chinese_fonts():
     from reportlab.pdfbase.ttfonts import TTFont
     from reportlab.pdfbase.pdfmetrics import registerFontFamily
     
-    windows_fonts = [
-        ('Microsoft YaHei', 'C:/Windows/Fonts/msyh.ttc', 0),
-        ('Microsoft YaHei Bold', 'C:/Windows/Fonts/msyhbd.ttc', 0),
-        ('SimHei', 'C:/Windows/Fonts/simhei.ttf', 0),
-        ('SimSun', 'C:/Windows/Fonts/simsun.ttc', 0),
+    base_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+    fonts_dir = os.path.join(base_dir, 'fonts')
+    
+    font_files = [
+        ('SimHei', os.path.join(fonts_dir, 'simhei.ttf')),
+        ('SimKai', os.path.join(fonts_dir, 'simkai.ttf')),
+        ('SimFang', os.path.join(fonts_dir, 'simfang.ttf')),
+        ('SimSun', os.path.join(fonts_dir, 'simsunb.ttf')),
     ]
     
-    for font_name, font_path, subfont_index in windows_fonts:
+    for font_name, font_path in font_files:
         if os.path.exists(font_path):
             try:
-                pdfmetrics.registerFont(TTFont(font_name, font_path, subfontIndex=subfont_index))
+                pdfmetrics.registerFont(TTFont(font_name, font_path))
             except:
                 pass
-    
-    registerFontFamily('Microsoft YaHei', normal='Microsoft YaHei', bold='Microsoft YaHei Bold')
 
 
 def _link_callback(uri, rel):
@@ -166,23 +167,23 @@ class PDFExporter:
             <title>{title}</title>
             <style>
                 @font-face {{
-                    font-family: 'Microsoft YaHei';
-                    src: url('fonts/msyh.ttc');
-                }}
-                @font-face {{
-                    font-family: 'Microsoft YaHei Bold';
-                    src: url('fonts/msyhbd.ttc');
-                }}
-                @font-face {{
                     font-family: 'SimHei';
                     src: url('fonts/simhei.ttf');
                 }}
                 @font-face {{
+                    font-family: 'SimKai';
+                    src: url('fonts/simkai.ttf');
+                }}
+                @font-face {{
+                    font-family: 'SimFang';
+                    src: url('fonts/simfang.ttf');
+                }}
+                @font-face {{
                     font-family: 'SimSun';
-                    src: url('fonts/simsun.ttc');
+                    src: url('fonts/simsunb.ttf');
                 }}
                 body {{
-                    font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', Arial, sans-serif;
+                    font-family: 'SimHei', 'SimKai', 'SimFang', 'SimSun', Arial, sans-serif;
                     line-height: 1.6;
                     margin: 20px;
                     color: #333;
