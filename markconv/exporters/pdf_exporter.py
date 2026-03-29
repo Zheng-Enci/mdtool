@@ -9,56 +9,6 @@ from typing import Dict, Any
 import markdown2
 
 
-def _register_chinese_fonts():
-    """
-    注册中文字体以支持中文显示
-    
-    xhtml2pdf 基于 ReportLab，默认不支持中文，需要手动注册中文字体
-    """
-    from reportlab.pdfbase import pdfmetrics
-    from reportlab.pdfbase.ttfonts import TTFont
-    from reportlab.pdfbase.pdfmetrics import registerFontFamily
-    
-    base_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
-    fonts_dir = os.path.join(base_dir, 'fonts')
-    
-    font_files = [
-        ('SimHei', os.path.join(fonts_dir, 'simhei.ttf')),
-        ('SimKai', os.path.join(fonts_dir, 'simkai.ttf')),
-        ('SimFang', os.path.join(fonts_dir, 'simfang.ttf')),
-        ('SimSun', os.path.join(fonts_dir, 'simsunb.ttf')),
-    ]
-    
-    for font_name, font_path in font_files:
-        if os.path.exists(font_path):
-            try:
-                pdfmetrics.registerFont(TTFont(font_name, font_path))
-                print(f"Successfully registered font: {font_name} from {font_path}")
-            except Exception as e:
-                print(f"Failed to register font {font_name}: {e}")
-
-
-def _link_callback(uri, rel):
-    """
-    链接回调函数，用于处理相对路径
-    
-    Args:
-        uri: URI 路径
-        rel: 相对路径
-        
-    Returns:
-        处理后的路径
-    """
-    if uri.startswith('http://') or uri.startswith('https://'):
-        return uri
-    
-    if uri.startswith('fonts/'):
-        base_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
-        return os.path.abspath(os.path.join(base_dir, uri))
-    
-    return os.path.join(os.path.dirname(__file__), uri)
-
-
 def _markdown_to_html(markdown_content: str) -> str:
     """
     将 Markdown 内容转换为 HTML
@@ -260,7 +210,7 @@ class PDFExporter:
         """
         将 HTML 内容转换为 PDF 文件
         
-        优先使用 WeasyPrint，如果失败则使用 xhtml2pdf
+        使用 WeasyPrint 进行转换
         
         Args:
             html_content (str): HTML 内容字符串
@@ -270,17 +220,5 @@ class PDFExporter:
         if output_dir and not os.path.exists(output_dir):
             os.makedirs(output_dir, exist_ok=True)
         
-        try:
-            from weasyprint import HTML
-            HTML(string=html_content).write_pdf(output_path)
-        except ImportError:
-            from xhtml2pdf import pisa
-            from xhtml2pdf.context import pisaContext
-            _register_chinese_fonts()
-            
-            context = pisaContext()
-            context.fontName = 'SimHei'
-            context.defaultFont = 'SimHei'
-            
-            with open(output_path, 'wb') as pdf_file:
-                pisa.CreatePDF(html_content, dest=pdf_file, encoding='UTF-8', link_callback=_link_callback, context=context)
+        from weasyprint import HTML
+        HTML(string=html_content).write_pdf(output_path)

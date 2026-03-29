@@ -137,3 +137,17 @@ python pdf_example.py
 - 改用 `xhtml2pdf.context.pisaContext` 创建 context 对象
 - 设置 `context.fontName` 和 `context.defaultFont` 为 SimHei
 - 将 context 作为参数传递给 `pisa.CreatePDF`
+
+### 2026-03-29 (第十四次更新)
+- xhtml2pdf 中文支持存在严重问题，无法正确显示中文字符
+- 尝试了多种方法都无法解决：
+  - ReportLab 字体注册
+  - 修改 DEFAULT_FONT 字典
+  - 使用 default_font 参数
+  - 使用 pisaContext 对象
+- 决定切换回 WeasyPrint
+- 移除 xhtml2pdf 相关代码和依赖
+- 恢复 WeasyPrint 作为唯一 PDF 导出库
+- 移除 `_register_chinese_fonts()` 和 `_link_callback()` 函数
+- 更新 requirements.txt，移除 reportlab 和 xhtml2pdf
+- 更新 setup.py，将 xhtml2pdf 替换回 weasyprint
