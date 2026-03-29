@@ -1,8 +1,8 @@
-from mdtool import MDConverter
+from mdconvert import MDConverter
 
 
 def main():
-    print("mdtool - Markdown 转 HTML 工具")
+    print("mdconvert - Markdown 转 HTML 工具")
     print("=" * 50)
     
     converter = MDConverter()
