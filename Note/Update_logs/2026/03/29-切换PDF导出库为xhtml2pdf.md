@@ -120,3 +120,9 @@ python pdf_example.py
 - 修改 `xhtml2pdf.default.DEFAULT_FONT` 字典
 - 设置 helvetica、sans-serif、serif、monospace 默认字体为 SimHei
 - 强制 xhtml2pdf 使用注册的中文字体
+
+### 2026-03-29 (第十一次更新)
+- 发现修改 DEFAULT_FONT 字典无效
+- 改用 `pisa.PMLParser` 创建 context 对象
+- 设置 `context.fontName` 和 `context.defaultFont` 为 SimHei
+- 将 context 作为参数传递给 `pisa.CreatePDF`
