@@ -167,22 +167,6 @@ class PDFExporter:
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>{title}</title>
             <style>
-                @font-face {{
-                    font-family: 'SimHei';
-                    src: url('fonts/simhei.ttf');
-                }}
-                @font-face {{
-                    font-family: 'SimKai';
-                    src: url('fonts/simkai.ttf');
-                }}
-                @font-face {{
-                    font-family: 'SimFang';
-                    src: url('fonts/simfang.ttf');
-                }}
-                @font-face {{
-                    font-family: 'SimSun';
-                    src: url('fonts/simsunb.ttf');
-                }}
                 body {{
                     font-family: 'SimHei', 'SimKai', 'SimFang', 'SimSun', Arial, sans-serif;
                     line-height: 1.6;

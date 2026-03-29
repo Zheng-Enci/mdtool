@@ -104,3 +104,9 @@ python pdf_example.py
 - 修改 `_link_callback()` 函数返回绝对路径
 - 使用 `os.path.abspath()` 确保字体文件路径为绝对路径
 - 解决 xhtml2pdf 无法打开临时字体文件的问题
+
+### 2026-03-29 (第八次更新)
+- 发现 xhtml2pdf 的 `@font-face` 支持有严重问题
+- 完全移除 HTML CSS 中的 `@font-face` 规则
+- 仅依赖 ReportLab 的 `pdfmetrics.registerFont()` 注册字体
+- 通过 CSS `font-family` 指定已注册的字体名称
