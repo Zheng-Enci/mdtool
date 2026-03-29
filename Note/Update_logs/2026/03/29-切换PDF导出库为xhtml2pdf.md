@@ -81,4 +81,8 @@ python pdf_example.py
 - 在使用 xhtml2pdf 生成 PDF 前自动注册中文字体
 - 添加 `encoding='UTF-8'` 参数到 pisa.CreatePDF
 - 添加 `_link_callback()` 函数处理相对路径
-- 在 HTML CSS 中添加 `@font-face` 规则直接引用字体文件
+
+### 2026-03-29 (第四次更新)
+- 移除 HTML CSS 中的 `@font-face` 规则
+- xhtml2pdf 不支持 CSS `@font-face` 引用本地字体文件
+- 仅通过 ReportLab 的 `pdfmetrics.registerFont()` 注册字体

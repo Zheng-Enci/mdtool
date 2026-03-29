@@ -162,18 +162,6 @@ class PDFExporter:
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>{title}</title>
             <style>
-                @font-face {{
-                    font-family: 'Microsoft YaHei';
-                    src: url('C:/Windows/Fonts/msyh.ttc');
-                }}
-                @font-face {{
-                    font-family: 'SimHei';
-                    src: url('C:/Windows/Fonts/simhei.ttf');
-                }}
-                @font-face {{
-                    font-family: 'SimSun';
-                    src: url('C:/Windows/Fonts/simsun.ttc');
-                }}
                 body {{
                     font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', Arial, sans-serif;
                     line-height: 1.6;
