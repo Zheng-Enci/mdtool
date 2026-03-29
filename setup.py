@@ -17,7 +17,7 @@ setup(
     name='markconv',
     
     # 版本号（遵循语义化版本规范：主版本.次版本.修订版本）
-    version='0.1.1',
+    version='0.1.2',
     
     # 作者姓名
     author='Zheng EnCi',
