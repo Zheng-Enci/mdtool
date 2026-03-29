@@ -67,3 +67,9 @@ python pdf_example.py
   - tinycss2==1.5.1
   - tinyhtml5==2.1.0
   - zopfli==0.4.1
+
+### 2026-03-29 (第二次更新)
+- requirements.txt 已更新，同时包含 WeasyPrint 和 xhtml2pdf
+- 修改 pdf_exporter.py 支持两个 PDF 库
+- 优先使用 WeasyPrint，如果未安装则自动降级到 xhtml2pdf
+- 这样既保证了高级功能（WeasyPrint 的 CSS 支持），又保证了兼容性（xhtml2pdf 的简单安装）
