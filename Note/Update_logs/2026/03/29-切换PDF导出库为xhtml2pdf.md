@@ -110,3 +110,7 @@ python pdf_example.py
 - 完全移除 HTML CSS 中的 `@font-face` 规则
 - 仅依赖 ReportLab 的 `pdfmetrics.registerFont()` 注册字体
 - 通过 CSS `font-family` 指定已注册的字体名称
+
+### 2026-03-29 (第九次更新)
+- 添加字体注册调试信息，打印成功/失败状态
+- 帮助诊断字体加载问题

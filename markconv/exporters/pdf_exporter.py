@@ -33,8 +33,9 @@ def _register_chinese_fonts():
         if os.path.exists(font_path):
             try:
                 pdfmetrics.registerFont(TTFont(font_name, font_path))
-            except:
-                pass
+                print(f"Successfully registered font: {font_name} from {font_path}")
+            except Exception as e:
+                print(f"Failed to register font {font_name}: {e}")
 
 
 def _link_callback(uri, rel):
