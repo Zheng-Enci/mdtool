@@ -151,3 +151,7 @@ python pdf_example.py
 - 移除 `_register_chinese_fonts()` 和 `_link_callback()` 函数
 - 更新 requirements.txt，移除 reportlab 和 xhtml2pdf
 - 更新 setup.py，将 xhtml2pdf 替换回 weasyprint
+
+### 2026-03-29 (第十五次更新)
+- 发现 WeasyPrint 缺少 fonttools 依赖
+- 添加 fonttools==4.55.3 到 requirements.txt

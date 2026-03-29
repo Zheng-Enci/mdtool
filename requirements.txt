@@ -5,6 +5,7 @@ cffi==2.0.0
 charset-normalizer==3.4.6
 cryptography==46.0.6
 cssselect2==0.9.0
+fonttools==4.55.3
 freetype-py==2.5.1
 html5lib==1.1
 idna==3.11
