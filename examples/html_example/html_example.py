@@ -1,5 +1,5 @@
-# 从 mdconvert 包中导入 MDConverter 类
-from mdconvert import MDConverter
+# 从 markconv 包中导入 MDConverter 类
+from markconv import MDConverter
 
 
 def html_basic_example():

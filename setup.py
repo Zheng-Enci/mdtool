@@ -1,5 +1,5 @@
 """
-mdconvert 包的 setup 配置文件
+markconv 包的 setup 配置文件
 用于将项目发布到 PyPI
 """
 
@@ -14,7 +14,7 @@ setup(
     # ===== 基本信息 =====
     
     # 包名称（用户执行 pip install 时使用的名称）
-    name='mdconvert',
+    name='markconv',
     
     # 版本号（遵循语义化版本规范：主版本.次版本.修订版本）
     version='0.1.0',
@@ -35,7 +35,7 @@ setup(
     long_description_content_type='text/markdown',
     
     # 项目主页 URL（显示在 PyPI 网站上）
-    url='https://github.com/Zheng-Enci/mdconvert',
+    url='https://github.com/Zheng-Enci/markconv',
     
     # ===== 包配置 =====
     
@@ -85,12 +85,12 @@ setup(
     # ===== 项目链接（显示在 PyPI 网站上）=====
     project_urls={
         # 问题反馈链接
-        'Bug Reports': 'https://github.com/Zheng-Enci/mdconvert/issues',
+        'Bug Reports': 'https://github.com/Zheng-Enci/markconv/issues',
         
         # 源代码链接
-        'Source': 'https://github.com/Zheng-Enci/mdconvert',
+        'Source': 'https://github.com/Zheng-Enci/markconv',
         
         # 文档链接（指向 README.md）
-        'Documentation': 'https://github.com/Zheng-Enci/mdconvert/blob/master/README.md',
+        'Documentation': 'https://github.com/Zheng-Enci/markconv/blob/master/README.md',
     },
 )
